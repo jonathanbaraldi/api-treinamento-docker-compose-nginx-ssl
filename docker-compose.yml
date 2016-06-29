@@ -1,0 +1,40 @@
+nginx:
+    build: ./nginx
+    links:
+        - node1:node1
+        - node2:node2
+        - node3:node3
+    ports:
+        - "443:443"
+
+node1:
+    build: ./node
+    links:
+        - redis
+    ports:
+        - "443"
+    volumes:
+        -  volumeteste:/tmp/volumeteste
+
+node2:
+    build: ./node
+    links:
+        - redis
+    ports:
+        - "443"
+    volumes:
+        -  volumeteste:/tmp/volumeteste
+
+node3:
+    build: ./node
+    links:
+        - redis
+    ports:
+        - "443"
+    volumes:
+        -  volumeteste:/tmp/volumeteste
+
+redis:
+    image: redis
+    ports:
+        - "6379"
