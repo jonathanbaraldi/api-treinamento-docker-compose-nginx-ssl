@@ -54,7 +54,7 @@ Para rodar nosso docker-compose, precisamos remover todos os containers que est√
 		This page has been viewed 29 times
 		----------------------------------
 
-	# docker-compose -f docker-compose.yml -f docker-compose-production.yml up -d
+	# docker-compose -f docker-compose.yml -f production.yml up -d
 
 E ap√≥s isso acessar no IP:80, pegando usando
 
